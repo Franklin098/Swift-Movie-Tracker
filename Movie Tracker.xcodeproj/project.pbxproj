@@ -8,21 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		F902C40E29D91108009C70E8 /* Movie_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F902C40D29D91108009C70E8 /* Movie_TrackerApp.swift */; };
-		F902C41029D91108009C70E8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F902C40F29D91108009C70E8 /* ContentView.swift */; };
+		F902C41029D91108009C70E8 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F902C40F29D91108009C70E8 /* MovieDetail.swift */; };
 		F902C41229D91109009C70E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F902C41129D91109009C70E8 /* Assets.xcassets */; };
 		F902C41529D91109009C70E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F902C41429D91109009C70E8 /* Preview Assets.xcassets */; };
 		F902C41729D91109009C70E8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F902C41629D91109009C70E8 /* Persistence.swift */; };
 		F902C41A29D91109009C70E8 /* Movie_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F902C41829D91109009C70E8 /* Movie_Tracker.xcdatamodeld */; };
+		F9BEE06329E230D800A3A259 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BEE06229E230D800A3A259 /* Movie.swift */; };
+		F9BEE06529E231C300A3A259 /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BEE06429E231C300A3A259 /* MovieList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F902C40A29D91108009C70E8 /* Movie Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F902C40D29D91108009C70E8 /* Movie_TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie_TrackerApp.swift; sourceTree = "<group>"; };
-		F902C40F29D91108009C70E8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F902C40F29D91108009C70E8 /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
 		F902C41129D91109009C70E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F902C41429D91109009C70E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F902C41629D91109009C70E8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		F902C41929D91109009C70E8 /* Movie_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Movie_Tracker.xcdatamodel; sourceTree = "<group>"; };
+		F9BEE06229E230D800A3A259 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		F9BEE06429E231C300A3A259 /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,11 +60,13 @@
 			isa = PBXGroup;
 			children = (
 				F902C40D29D91108009C70E8 /* Movie_TrackerApp.swift */,
-				F902C40F29D91108009C70E8 /* ContentView.swift */,
+				F902C40F29D91108009C70E8 /* MovieDetail.swift */,
 				F902C41129D91109009C70E8 /* Assets.xcassets */,
 				F902C41629D91109009C70E8 /* Persistence.swift */,
 				F902C41829D91109009C70E8 /* Movie_Tracker.xcdatamodeld */,
 				F902C41329D91109009C70E8 /* Preview Content */,
+				F9BEE06229E230D800A3A259 /* Movie.swift */,
+				F9BEE06429E231C300A3A259 /* MovieList.swift */,
 			);
 			path = "Movie Tracker";
 			sourceTree = "<group>";
@@ -143,10 +149,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9BEE06529E231C300A3A259 /* MovieList.swift in Sources */,
 				F902C41729D91109009C70E8 /* Persistence.swift in Sources */,
 				F902C41A29D91109009C70E8 /* Movie_Tracker.xcdatamodeld in Sources */,
-				F902C41029D91108009C70E8 /* ContentView.swift in Sources */,
+				F902C41029D91108009C70E8 /* MovieDetail.swift in Sources */,
 				F902C40E29D91108009C70E8 /* Movie_TrackerApp.swift in Sources */,
+				F9BEE06329E230D800A3A259 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
