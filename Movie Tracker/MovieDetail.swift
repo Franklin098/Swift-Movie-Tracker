@@ -22,7 +22,19 @@ struct MovieDetail: View {
     // environment is a global place to store data
     // if you have some data that is not being used in other places, @ObservableObject is fine
     
-
+    /*
+     Accesibility: make the app useful and accesible to as many customer as possible
+     
+     Normaly it is related to provide functionality for people with some kind of medical problem in hearing, seeing, etc.
+     
+     App must be:
+     
+     - Understandable
+     - Iteractable (someone can use the app even just talking or withound seeing)
+     - Navigable (our navigation is simple, consistent)
+     */
+    
+    
     var body: some View {
         
         List {
@@ -44,10 +56,12 @@ struct MovieDetail: View {
                     Spacer()
                     Text(String(repeating: "⭐️", count: Int(movie.rating)))
                         .font(.title)
+                        .accessibilityLabel(Text("\(Int(movie.rating)) star rating"))
                     Spacer()
                 }
                 
                 Slider(value: $movie.rating, in: 1...5 , step: 1)
+                    .accessibilityLabel(Text("\(Int(movie.rating))"))
             }
             
             Section{
