@@ -9,14 +9,29 @@ import SwiftUI
 
 struct MovieList: View {
     
-    var movies: [Movie] = [Movie() ,Movie() ,Movie()]
+    // every time there is a change in its @Published properties, the UI updates
+    //@ObservedObject var movieStorage = MovieStorage()
+    
+    // Environment objects are aviable in all the app !
+    @EnvironmentObject var movieStorage: MovieStorage
     
     var body: some View {
         
-        // if we want to render a List in SwiftUI, the data object must be an Identifiable
-        List(movies){ movie in
+        NavigationView{
             
-            Text(movie.title)
+            // if we want to render a List in SwiftUI, the data object must be an Identifiable
+            List(movieStorage.movies){ currentMovie in
+                
+                NavigationLink(destination: MovieDetail(movie: currentMovie,newMovie: false) ){
+                    Text(currentMovie.title)
+                }
+                
+            }.navigationBarTitle("Movies")
+                .navigationBarItems(trailing:
+                    NavigationLink(destination:MovieDetail(movie: Movie(),newMovie: true)){
+                        Image(systemName: "plus")
+                    }
+                )
             
         }
     }
@@ -25,5 +40,6 @@ struct MovieList: View {
 struct MovieList_Previews: PreviewProvider {
     static var previews: some View {
         MovieList()
+            .environmentObject(MovieStorage())
     }
 }

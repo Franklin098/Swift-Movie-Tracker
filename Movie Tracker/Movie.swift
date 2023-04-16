@@ -16,3 +16,14 @@ struct Movie: Identifiable {
     var seeing = false
     
 }
+
+
+// Observed Object
+
+class MovieStorage: ObservableObject {
+    
+    // @Published -> every time there are changes to this variable, go and tell Swift UI to update
+    @Published var movies = [Movie]()
+    
+    
+}

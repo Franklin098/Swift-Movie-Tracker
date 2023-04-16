@@ -13,6 +13,16 @@ struct MovieDetail: View {
     
     @State var movie: Movie
     
+    @Environment(\.presentationMode) var presentationMode
+    
+    let newMovie : Bool
+    
+    
+    @EnvironmentObject var movieStorage : MovieStorage
+    // environment is a global place to store data
+    // if you have some data that is not being used in other places, @ObservableObject is fine
+    
+
     var body: some View {
         
         List {
@@ -57,6 +67,22 @@ struct MovieDetail: View {
             Section{
                 Button {
                     
+                    if newMovie {
+                        
+                        movieStorage.movies.append(movie)
+                        
+                    } else {
+                        
+                        for i in 0..<movieStorage.movies.count {
+                            if movieStorage.movies[i].id == movie.id {
+                                movieStorage.movies[i] = self.movie
+                            }
+                        }
+                    
+                    }
+                    
+                    self.presentationMode.wrappedValue.dismiss()
+                    
                 } label: {
                     HStack{
                         Spacer()
@@ -77,7 +103,7 @@ struct MovieDetail: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieDetail(movie: Movie()).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        MovieDetail(movie: Movie(),newMovie: true).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
 

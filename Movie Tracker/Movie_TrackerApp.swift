@@ -10,11 +10,17 @@ import SwiftUI
 @main
 struct Movie_TrackerApp: App {
     let persistenceController = PersistenceController.shared
+    
+    // our Movie Storage object will be accesible in all the screens of the app
+    let movieStorage = MovieStorage()
 
     var body: some Scene {
         WindowGroup {
-            MovieDetail(movie: Movie())
+            
+        
+            MovieList()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(movieStorage)
         }
     }
 }
